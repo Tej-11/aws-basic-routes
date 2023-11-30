@@ -8,6 +8,10 @@ const envPath: string = path.join(__dirname + "/.env");
 dotenv.config({ path: envPath });
 const port = process.env.DEV_PORT as string;
 
+app.get("/", async (req, res) => {
+  res.send("This is th home route");
+})
+
 app.get("/first-route", async (req, res) => {
   try {
     res.status(200).send("Hey.. this is the first route");
